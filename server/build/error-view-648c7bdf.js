@@ -1,0 +1,2 @@
+import{h as e}from"./lit-element-e4a60982.js";import{P as s,S as t}from"./shared-styles-54481918.js";window.customElements.define("error-view",class extends s{static get styles(){return[t]}render(){return e`<section><h2>Oops! You hit a 404</h2><p>The page you're looking for doesn't seem to exist. Head back <a href="/">home</a> and try again?</p></section>`}});
+//# sourceMappingURL=error-view-648c7bdf.js.map

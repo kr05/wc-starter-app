@@ -16,8 +16,8 @@
     "site:build": "npm run storybook:build",
     "storybook": "start-storybook -p 9001",
     "storybook:build": "build-storybook -o _site -s storybook-static",
-    "start:build": "cd dist && es-dev-server --open",
-    "build": "rimraf dist && rollup -c rollup.config.js",
+    "start:build": "cd server/build && es-dev-server --open",
+    "build": "rimraf server/build && rollup -c rollup.config.js",
     "start": "es-dev-server --open",
     "start:compatibility": "es-dev-server --app-index index.html --compatibility all --node-resolve --open --watch"
   },
@@ -30,19 +30,20 @@
     "pwa-helpers": "^0.9.1"
   },
   "devDependencies": {
-    "eslint": "^6.1.0",
+    "@open-wc/building-rollup": "^0.9.0",
+    "@open-wc/demoing-storybook": "^0.3.0",
     "@open-wc/eslint-config": "^1.0.0",
     "@open-wc/prettier-config": "^0.1.10",
+    "@open-wc/testing": "^2.0.0",
+    "@open-wc/testing-karma": "^3.0.0",
+    "@open-wc/testing-karma-bs": "^1.0.0",
+    "eslint": "^6.1.0",
     "husky": "^1.0.0",
     "lint-staged": "^8.0.0",
-    "@open-wc/testing-karma": "^3.0.0",
-    "webpack-merge": "^4.1.5",
-    "@open-wc/testing-karma-bs": "^1.0.0",
-    "@open-wc/testing": "^2.0.0",
-    "@open-wc/demoing-storybook": "^0.3.0",
-    "@open-wc/building-rollup": "^0.9.0",
     "rimraf": "^2.6.3",
-    "rollup": "^1.15.4"
+    "rollup": "^1.15.4",
+    "rollup-plugin-copy": "^3.1.0",
+    "webpack-merge": "^4.1.5"
   },
   "eslintConfig": {
     "extends": [
@@ -51,11 +52,6 @@
     ]
   },
   "prettier": "@open-wc/prettier-config",
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
     "*.js": [
       "eslint --fix",
