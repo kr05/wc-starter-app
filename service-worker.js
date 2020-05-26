@@ -16,11 +16,6 @@ workbox.routing.registerNavigationRoute(
 );
 
 workbox.routing.registerNavigationRoute(
-  // look up its corresponding cache key for /view1
+  // look up its corresponding cache key for /view2
   workbox.precaching.getCacheKeyForURL('/my-view2'),
-);
-
-workbox.routing.registerNavigationRoute(
-  // look up its corresponding cache key for /view1
-  workbox.precaching.getCacheKeyForURL('/my-view3'),
 );
